@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	mode: "development",
-	entry: "./src/index.js",
+	entry: {
+		main: "./src/index.js",
+		home: "./src/home.js",
+	},
 	output: {
 		filename: "[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
@@ -16,6 +19,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: "Restaurant Page",
+			template: path.resolve(__dirname, "src", "index.html"),
 		}),
 	],
 	optimization: {
