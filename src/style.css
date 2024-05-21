@@ -43,3 +43,36 @@ header > nav > button {
 	letter-spacing: 0.2rem;
 	cursor: pointer;
 }
+
+#content {
+	height: 100%;
+}
+
+#content > #home-page-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+#content > #home-page-container > * {
+	flex: 1;
+}
+
+#content > #home-page-container > #left-container > img {
+	object-fit: contain;
+	max-width: 100%;
+	max-height: 100%;
+	animation: 1.5s fadeIn;
+}
+
+@keyframes fadeIn {
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+}
