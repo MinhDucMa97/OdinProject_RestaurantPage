@@ -3,6 +3,8 @@ import mainPageImage from "./main_page_image.png";
 export default function homePageLoading() {
 	const mainContainer = document.getElementById("content");
 
+	mainContainer.innerHTML = "";
+
 	const contentContainer = document.createElement("div");
 	contentContainer.className = "home-page-container";
 	contentContainer.id = "home-page-container";
