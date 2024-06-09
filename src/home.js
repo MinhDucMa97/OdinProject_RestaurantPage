@@ -16,21 +16,36 @@ export default function homePageLoading() {
   leftContainer.className = "left-container";
   const leftHomeImage = document.createElement("img");
   leftHomeImage.src = leftContainerImage;
+  const leftHomeButton = document.createElement("button");
+  leftHomeButton.className = "overlay-button left-overlay-btn";
+  leftHomeButton.id = "left-overlay-btn";
+  leftHomeButton.textContent = "Menu";
   leftContainer.appendChild(leftHomeImage);
+  leftContainer.appendChild(leftHomeButton);
 
   const middleContainer = document.createElement("div");
-  middleContainer.className = "middle-container";
+  middleContainer.className = "image-blur middle-container";
   middleContainer.id = "middle-container";
   const middleHomeImage = document.createElement("img");
   middleHomeImage.src = middleContainerImage;
+  const middleHomeButton = document.createElement("button");
+  middleHomeButton.className = "overlay-button middle-overlay-btn";
+  middleHomeButton.id = "middle-overlay-btn";
+  middleHomeButton.textContent = "Location";
   middleContainer.appendChild(middleHomeImage);
+  middleContainer.appendChild(middleHomeButton);
 
   const rightContainer = document.createElement("div");
   rightContainer.className = "right-container";
   rightContainer.id = "right-container";
   const rightHomeImage = document.createElement("img");
   rightHomeImage.src = rightContainerImage;
+  const rightHomeButton = document.createElement("button");
+  rightHomeButton.className = "overlay-button right-overlay-btn";
+  rightHomeButton.id = "right-overlay-btn";
+  rightHomeButton.textContent = "About";
   rightContainer.appendChild(rightHomeImage);
+  rightContainer.appendChild(rightHomeButton);
 
   contentContainer.appendChild(leftContainer);
   contentContainer.appendChild(middleContainer);

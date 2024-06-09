@@ -10,14 +10,6 @@ body {
   overflow: hidden;
 }
 
-body {
-  background-image: url("./vietnam_background_image.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 header {
   background-color: hsl(80, 23%, 90%);
   display: flex;
@@ -68,9 +60,14 @@ header > nav > button:hover {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   gap: 1rem;
+  background-image: url("./vietnam_background_image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #content > #home-page-container > * {
@@ -79,62 +76,58 @@ header > nav > button:hover {
   align-items: center;
   justify-content: center;
   height: 100%;
+  position: relative;
 }
 
-#content > #home-page-container > #left-container > img {
-  object-fit: contain;
-  max-width: 100%;
+#left-container img,
+#middle-container img,
+#right-container img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  max-width: 80%;
   max-height: 100%;
-  animation: 1.5s fadeInFromLeft;
-  transition: opacity 0.3 ease;
-  border-radius: 1rem;
+  border-radius: 2rem;
+  animation: 2s raiseUp;
 }
 
-#content > #home-page-container > #left-container > img:hover {
-  opacity: 0.8;
+#left-container img:hover,
+#middle-container img:hover,
+#right-container img:hover {
+  filter: blur(0.8px);
 }
 
-#content > #home-page-container > #right-container > img {
-  object-fit: contain;
-  max-width: 100%;
-  max-height: 100%;
-  animation: 1.5s fadeInFromRight;
+#left-container button,
+#middle-container button,
+#right-container button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.6rem 1rem;
+  background-color: hsl(80, 23%, 90%);
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
 
-#content > #home-page-container > #middle-container > img {
-  object-fit: contain;
-  max-width: 100%;
-  max-height: 100%;
-  animation: 2s fadeInMiddle;
+#content > #home-page-container > *:hover .overlay-button {
+  opacity: 1;
 }
 
-@keyframes fadeInFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInFromRight {
-  from {
-    transform: translateX(200%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInMiddle {
+@keyframes raiseUp {
   from {
     opacity: 0;
+    transform: translateY(70%);
   }
   to {
     opacity: 1;
+    transform: translateY(0%);
   }
 }
