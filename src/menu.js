@@ -1,6 +1,9 @@
 import beefSalad from "./vietnamese-beef-salad.jpg";
 import phoSpecial from "./pho-special.jpeg";
 import ricePlate from "./porkchop-rice-plate.jpg";
+import bunBoHue from "./bun-bo-hue.jpg";
+import tapiocaNoodleSoup from "./tapioca-noodle-soup.jpg";
+import { CardContent } from "@mui/material";
 
 export default function menuPageLoading() {
   const menuSelection = [
@@ -10,6 +13,16 @@ export default function menuPageLoading() {
       name: "Grilled Pork Chop & Grilled Shrimp Rice Plate",
       price: "$17.95",
       image: ricePlate,
+    },
+    {
+      name: "Vegan Bun Bo Hue",
+      price: "$16.50",
+      image: bunBoHue,
+    },
+    {
+      name: "Vietnamese Crab & Shrimp Tapioca Noodle Soup",
+      price: "$16.50",
+      image: tapiocaNoodleSoup,
     },
   ];
 
@@ -39,17 +52,19 @@ export default function menuPageLoading() {
     itemImage.src = item.image;
     itemImage.className = "menu-item-image";
 
-    const itemName = document.createElement("h3");
+    const cardContent = document.createElement("div");
+    cardContent.className = "card-content";
+    const itemName = document.createElement("p");
     itemName.className = "item-name";
     itemName.textContent = item.name;
-
-    const itemPrice = document.createElement("h4");
+    const itemPrice = document.createElement("p");
     itemPrice.className = "item-price";
     itemPrice.textContent = item.price;
+    cardContent.appendChild(itemName, itemPrice);
 
     cardContainer.appendChild(itemImage);
-    cardContainer.appendChild(itemName);
-    cardContainer.appendChild(itemPrice);
+    cardContainer.appendChild(cardContent);
+
     menuContent.appendChild(cardContainer);
   });
 
