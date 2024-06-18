@@ -7,6 +7,7 @@ module.exports = {
 		main: "./src/index.js",
 		home: "./src/home.js",
 		menu: "./src/menu.js",
+		about: "./src/about.js",
 	},
 	output: {
 		filename: "[name].bundle.js",

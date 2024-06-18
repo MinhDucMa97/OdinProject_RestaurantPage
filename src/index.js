@@ -2,6 +2,7 @@ import "./style.css";
 import Logo from "./logo.jpg";
 import homePageLoading from "./home.js";
 import menuPageLoading from "./menu.js";
+import aboutPageLoading from "./about.js";
 
 homePageLoading();
 
@@ -13,15 +14,15 @@ const headerButtons = document.querySelectorAll(".header-btn");
 console.log(headerButtons);
 
 function handleClick(event) {
-  if (event.target.classList.contains("menuBtn")) {
-    menuPageLoading();
-  } else if (event.target.classList.contains("homeBtn")) {
-    homePageLoading();
-  } else if (event.target.classList.contains("aboutBtn")) {
-    alert("Page is on building process");
-  }
+	if (event.target.classList.contains("menuBtn")) {
+		menuPageLoading();
+	} else if (event.target.classList.contains("homeBtn")) {
+		homePageLoading();
+	} else if (event.target.classList.contains("aboutBtn")) {
+		aboutPageLoading();
+	}
 }
 
 headerButtons.forEach((button) => {
-  button.addEventListener("click", handleClick);
+	button.addEventListener("click", handleClick);
 });
