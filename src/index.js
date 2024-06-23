@@ -11,7 +11,6 @@ logoImage.src = Logo;
 logoImage.addEventListener("click", homePageLoading);
 
 const headerButtons = document.querySelectorAll(".header-btn");
-console.log(headerButtons);
 
 function handleClick(event) {
 	if (event.target.classList.contains("menuBtn")) {
